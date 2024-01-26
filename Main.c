@@ -15,7 +15,5 @@ int main(void) {
 int test(void) {
     
     int i = 3;
-   
-    
     
 }

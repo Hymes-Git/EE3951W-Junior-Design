@@ -8,6 +8,7 @@
 
 #include "xc.h"
 #include "LCDlib.h"
+#include "Bufflib.h"
 
 void setup(void);
 int main(void);

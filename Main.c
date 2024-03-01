@@ -131,11 +131,16 @@ int main(void) {
 }
 
 void init_adc(void) {
-    TRISAbits.TRISA0 = 1; // set A0 to input
+    TRISBbits.TRISB15 = 1; // set A0 to input
     
-    AD1PCFGbits.PCFG0 = 0; // setup I/O
+    AD1PCFGbits.PCFG9 = 0; // setup I/O
     
-    AD1CON2bits.VCFG = 0b000; // Use AVDD (3.3V) and AVSS (0V) as max/min
+    AD1CHSbits.CH0SA = 9;
+    
+    //AD1CON2bits.VCFG = 0b000; // Use AVDD (3.3V) and AVSS (0V) as max/min
+    
+    AD1CON2bits.VCFG = 0b011; // Use Vref+ and Vref-
+    
     AD1CON3bits.ADCS = 0b00000001; // you want TAD >= 75ms (Tcy = 62.5ns)
     AD1CON1bits.SSRC = 0b010; // sample on timer3 events
     AD1CON3bits.SAMC = 0b00001; // you want at least 1 auto sample time bit

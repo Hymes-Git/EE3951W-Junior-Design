@@ -112,6 +112,9 @@ int main(void) {
     lcd_setCursor(0,0);
     char string[20];
     unsigned long int adValue;
+    double rawVoltage;
+    double compVoltage;
+    double temp;
     
     while(1) {
        
@@ -119,9 +122,12 @@ int main(void) {
        while(_T1IF == 0);
        _T1IF = 0;
        adValue = getAvg();
+       rawVoltage = ((1.024/128)*adValue)+1.024;
+       compVoltage = (rawVoltage*1000 - 1024 - 0.00125) / 122.4;
+       temp = -0.122*(compVoltage*compVoltage) + 24.9 * compVoltage + 0.09;  
        
        // changes the avg data into a string
-       sprintf(string , "%6.4f V", (3.3/128)*adValue);
+       sprintf(string , "%6.1f C", temp);
        
        lcd_printStr(string);
        lcd_setCursor(0,0);

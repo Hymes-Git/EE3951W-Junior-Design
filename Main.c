@@ -128,6 +128,7 @@ int main(void) {
        
        // changes the avg data into a string
        sprintf(string , "%6.2f C", temp);
+       //sprintf(string , "%6.4f V", rawVoltage);
        
        lcd_printStr(string);
        lcd_setCursor(0,0);

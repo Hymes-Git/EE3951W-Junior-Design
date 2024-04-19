@@ -1,4 +1,4 @@
-/* 
+/*
  * File:   Bufflib.h
  * Author: gahym
  *
@@ -6,23 +6,21 @@
  */
 
 #ifndef BUFFLIB_H
-#define	BUFFLIB_H
+#define BUFFLIB_H
 
-#ifdef	__cplusplus
-extern "C" {
+#ifdef __cplusplus
+extern "C"
+{
 #endif
 
-void putVal(int newValue);
+    void putVal(int newValue);
 
-int getAvg();
+    int getAvg();
 
-void initBuffer();
+    void initBuffer();
 
-
-
-#ifdef	__cplusplus
+#ifdef __cplusplus
 }
 #endif
 
-#endif	/* BUFFLIB_H */
-
+#endif /* BUFFLIB_H */

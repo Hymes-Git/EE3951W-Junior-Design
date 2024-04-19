@@ -1,4 +1,4 @@
-/* 
+/*
  * File:   LCDlib.h
  * Author: gahym
  *
@@ -6,10 +6,11 @@
  */
 
 #ifndef LCDLIB_H
-#define	LCDLIB_H
+#define LCDLIB_H
 
-#ifdef	__cplusplus
-extern "C" {
+#ifdef __cplusplus
+extern "C"
+{
 #endif
 
     void init_lcd(void);
@@ -19,9 +20,8 @@ extern "C" {
     void lcd_printStr(const char s[]);
     void delayms(unsigned int ms);
 
-#ifdef	__cplusplus
+#ifdef __cplusplus
 }
 #endif
 
-#endif	/* LCDLIB_H */
-
+#endif /* LCDLIB_H */

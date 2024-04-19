@@ -123,7 +123,7 @@ void lcd_printStr(const char s[])
         ;
     _MI2C2IF = 0;
 
-    while (s[pointer + 1] != NULL)
+    while (s[pointer + 1])
     {
         // Send Repeat Control Byte
         // 76543210

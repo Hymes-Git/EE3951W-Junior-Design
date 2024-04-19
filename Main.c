@@ -12,6 +12,9 @@
 void setup(void);
 int main(void);
 void init_adc(void);
+void init_timer1(void);
+void init_power_saving(void);
+void idle_cpu(void);
 
 // CW1: FLASH CONFIGURATION WORD 1 (see PIC24 Family Reference Manual 24.1)
 #pragma config ICS = PGx1   // Comm Channel Select (Emulator EMUC1/EMUD1 pins are shared with PGC1/PGD1)

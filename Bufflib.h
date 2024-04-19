@@ -13,11 +13,11 @@ extern "C"
 {
 #endif
 
-    void putVal(int newValue);
+    void put_val(int newValue);
 
-    int getAvg();
+    int get_avg();
 
-    void initBuffer();
+    void init_buffer();
 
 #ifdef __cplusplus
 }

@@ -7,7 +7,7 @@ static int adc_buffer[BUFSIZE];
 static int buffer_index = 0;
 
 // takes a value and adds it into the next slot of the buffer
-void putVal(int newValue)
+void put_val(int newValue)
 {
     adc_buffer[buffer_index] = newValue;
     buffer_index++;
@@ -16,7 +16,7 @@ void putVal(int newValue)
 }
 
 // returns the average value of all sample size last values stored in the buffer
-int getAvg()
+int get_avg()
 {
     long int sum = 0;
     int returnval;
@@ -43,7 +43,7 @@ int getAvg()
 }
 
 // fills the buffer with 0s
-void initBuffer()
+void init_buffer()
 {
     int i;
     for (i = 0; i < BUFSIZE; i++)

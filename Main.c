@@ -106,7 +106,7 @@ int main(void)
 
     init_adc();
     init_timer1();
-    initBuffer();
+    init_buffer();
 
     lcd_setCursor(0, 0);
     char string[20];
@@ -122,7 +122,7 @@ int main(void)
         while (_T1IF == 0)
             ;
         _T1IF = 0;
-        adValue = getAvg();
+        adValue = get_avg();
         rawVoltage = ((0.576 / 1024) * adValue) + 1.024;
         compVoltage = (rawVoltage * 1000 - 1024 - 0.00125) / 122.4;
         temp = -0.122 * (compVoltage * compVoltage) + 24.9 * compVoltage - 0.11;
@@ -185,5 +185,5 @@ void __attribute__((interrupt, auto_psv)) _ADC1Interrupt()
 {
     _AD1IF = 0;
     int num = ADC1BUF0;
-    putVal(num); // adds data to the buffer
+    put_val(num); // adds data to the buffer
 }

@@ -35,8 +35,7 @@ int getAvg(){
     }   
 
     
-    // the number 7 here should be log_2(num samples)
-    returnval = sum >> 7;
+    returnval = sum >> 4; // divide by 16
     
     return returnval;
 }

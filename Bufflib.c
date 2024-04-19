@@ -3,8 +3,8 @@
 #define BUFSIZE 128
 #define SampleSize 16
 
-int adc_buffer[BUFSIZE];
-int buffer_index = 0;
+static int adc_buffer[BUFSIZE];
+static int buffer_index = 0;
 
 // takes a value and adds it into the next slot of the buffer
 void putVal(int newValue)

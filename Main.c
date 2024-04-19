@@ -6,6 +6,7 @@
  */
 
 #include "xc.h"
+#include <stdio.h>
 #include "LCDlib.h"
 #include "Bufflib.h"
 

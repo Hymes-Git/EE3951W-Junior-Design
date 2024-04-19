@@ -111,6 +111,7 @@ int main(void)
     init_adc();
     init_timer1();
     init_buffer();
+    init_power_saving();
 
     lcd_setCursor(0, 0);
     char string[20];
@@ -137,6 +138,7 @@ int main(void)
 
         lcd_printStr(string);
         lcd_setCursor(0, 0);
+        idle_cpu();
     }
 
     return 0;
@@ -182,6 +184,19 @@ void init_timer1(void)
     PR1 = 49999;
     _T1IF = 0;
     T1CONbits.TON = 1;
+}
+
+void init_power_saving(void)
+{
+    /* Disable unnecessary peripherals */
+    PMD1 = 0b1101011111111110; // Keep timer 3, timer 1, and ADC
+    PMD2 = 0b1111111111111111; // Disable all IC and OC
+    PMD3 = 0b1111111111111101; // Keep I2C
+}
+
+void idle_cpu(void)
+{
+    asm("pwrsav #1"); // 1 is IDLE_MODE
 }
 
 // adds data to the buffer every time new data is available

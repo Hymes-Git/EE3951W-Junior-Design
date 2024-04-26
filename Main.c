@@ -69,7 +69,7 @@ int main(void)
         temp = -0.122 * (compVoltage * compVoltage) + 24.9 * compVoltage - 0.11;
 
         // changes the avg data into a string
-        sprintf(string, "%6.2f C", temp);
+        sprintf(string, "%6.1f C", temp);
         // sprintf(string , "%6.4f V", rawVoltage);
 
         lcd_printStr(string);
